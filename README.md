@@ -1,5 +1,9 @@
 # TasselNetv2+
 
+<p align="center">
+  <img src="plant_counting.png" width="825"/>
+</p>
+
 This repository includes the official implementation of TasselNetv2+ for plant counting, presented in our submission:
 
 **TasselNetv2+: A Fast Implementation for High-Throughput Plant Counting from High-Resolution RGB Imagery**
