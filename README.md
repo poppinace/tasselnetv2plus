@@ -92,3 +92,17 @@ To use this framework on your own dataset, you may need to:
 6. Create a new `your_dataset.sh` following examples in `./config` and modify the hyper-parameters (e.g., batch size, crop size) if applicable.
 7. Train and test your model. Happy playing:)
 
+## Citation
+If you find this work or code useful for your research, please cite:
+```
+@article{xiong2019tasselnetv2,
+  title={TasselNetv2: in-field counting of wheat spikes with context-augmented local regression networks},
+  author={Xiong, Haipeng and Cao, Zhiguo and Lu, Hao and Madec, Simon and Liu, Liang and Shen, Chunhua},
+  journal={Plant Methods},
+  volume={15},
+  number={1},
+  pages={150},
+  year={2019},
+  publisher={Springer}
+}
+```
