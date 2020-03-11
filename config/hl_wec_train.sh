@@ -1,0 +1,23 @@
+CUDA_VISIBLE_DEVICES=0 python hltrainval.py \
+--data-dir ./data/wheat_ears_counting_dataset \
+--dataset wec \
+--model tasselnetv2plus \
+--exp tasselnetv2plus \
+--data-list ./data/wheat_ears_counting_dataset/train.txt \
+--data-val-list ./data/wheat_ears_counting_dataset/val.txt \
+--restore-from model_best.pth.tar \
+--image-mean 0.4051 0.4392 0.2344 \
+--image-std 0.2569 0.2620 0.2287 \
+--input-size 64 \
+--output-stride 8 \
+--resize-ratio 0.167 \
+--optimizer sgd \
+--milestones 200 400 \
+--batch-size 8 \
+--crop-size 512 512 \
+--learning-rate 1e-2 \
+--num-epochs 500 \
+--num-workers 0 \
+--print-every 10 \
+--random-seed 2020 \
+--val-every 10

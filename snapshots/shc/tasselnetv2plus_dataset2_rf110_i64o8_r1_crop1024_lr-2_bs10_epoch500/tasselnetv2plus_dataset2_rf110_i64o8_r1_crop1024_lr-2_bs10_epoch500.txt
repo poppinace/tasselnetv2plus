@@ -1,0 +1,92 @@
+image_scale :	 0.00392156862745098
+image_mean :	 [[[0.3714 0.3609 0.2386]]]
+image_std :	 [[[0.2705 0.2567 0.2161]]]
+scales :	 [0.7, 1, 1.3]
+shorter_side :	 224
+data_dir :	 ./data/sorghum_head_counting_dataset
+dataset :	 shc
+exp :	 tasselnetv2plus_dataset2_rf110_i64o8_r1_crop1024_lr-2_bs10_epoch500
+data_list :	 ./data/sorghum_head_counting_dataset/dataset2_train.txt
+data_val_list :	 ./data/sorghum_head_counting_dataset/dataset2_test.txt
+restore_from :	 ./snapshots/shc/tasselnetv2plus_dataset2_rf110_i64o8_r1_crop1024_lr-2_bs10_epoch500/model_best.pth.tar
+snapshot_dir :	 ./snapshots/shc/tasselnetv2plus_dataset2_rf110_i64o8_r1_crop1024_lr-2_bs10_epoch500
+result_dir :	 ./results/shc/tasselnetv2plus_dataset2_rf110_i64o8_r1_crop1024_lr-2_bs10_epoch500
+save_output :	 False
+input_size :	 64
+output_stride :	 8
+resize_ratio :	 1.0
+model :	 tasselnetv2plus
+width_mult :	 1.0
+use_pretrained :	 False
+freeze_bn :	 False
+sync_bn :	 False
+use_nonlinear :	 False
+use_context :	 False
+use_squeeze :	 False
+optimizer :	 sgd
+batch_size :	 5
+milestones :	 [200, 400]
+crop_size :	 (256, 1024)
+evaluate_only :	 False
+learning_rate :	 0.01
+momentum :	 0.95
+weight_decay :	 0.0005
+mult :	 1
+num_epochs :	 500
+num_workers :	 0
+print_every :	 4
+random_seed :	 2020
+val_every :	 10
+epoch: 10, mae: 41.29, mse: 46.29, relerr: 41.09%, relerr10: 41.09%, r2: 0.0691
+epoch: 20, mae: 11.44, mse: 12.30, relerr: 11.18%, relerr10: 11.18%, r2: 0.4129
+epoch: 30, mae: 39.58, mse: 39.99, relerr: 39.08%, relerr10: 39.08%, r2: 0.3798
+epoch: 40, mae: 22.82, mse: 23.76, relerr: 22.41%, relerr10: 22.41%, r2: 0.2649
+epoch: 50, mae: 43.68, mse: 44.28, relerr: 43.37%, relerr10: 43.37%, r2: 0.5122
+epoch: 60, mae: 33.05, mse: 34.23, relerr: 32.60%, relerr10: 32.60%, r2: 0.1628
+epoch: 70, mae: 24.90, mse: 27.40, relerr: 24.67%, relerr10: 24.67%, r2: 0.3279
+epoch: 80, mae: 45.99, mse: 47.63, relerr: 45.53%, relerr10: 45.53%, r2: 0.3714
+epoch: 90, mae: 23.05, mse: 28.55, relerr: 22.89%, relerr10: 22.89%, r2: 0.1397
+epoch: 100, mae: 13.39, mse: 17.55, relerr: 13.28%, relerr10: 13.28%, r2: 0.3006
+epoch: 110, mae: 15.50, mse: 19.12, relerr: 15.33%, relerr10: 15.33%, r2: 0.3328
+epoch: 120, mae: 3.58, mse: 4.78, relerr: 3.57%, relerr10: 3.57%, r2: 0.6767
+epoch: 130, mae: 10.46, mse: 12.84, relerr: 10.39%, relerr10: 10.39%, r2: 0.4653
+epoch: 140, mae: 14.22, mse: 14.92, relerr: 14.08%, relerr10: 14.08%, r2: 0.3705
+epoch: 150, mae: 13.82, mse: 14.90, relerr: 13.69%, relerr10: 13.69%, r2: 0.6517
+epoch: 160, mae: 17.76, mse: 18.84, relerr: 17.64%, relerr10: 17.64%, r2: 0.5625
+epoch: 170, mae: 11.72, mse: 13.31, relerr: 11.70%, relerr10: 11.70%, r2: 0.4438
+epoch: 180, mae: 7.93, mse: 8.79, relerr: 7.86%, relerr10: 7.86%, r2: 0.6470
+epoch: 190, mae: 49.86, mse: 52.81, relerr: 49.36%, relerr10: 49.36%, r2: 0.2279
+epoch: 200, mae: 7.45, mse: 12.08, relerr: 7.44%, relerr10: 7.44%, r2: 0.3438
+epoch: 210, mae: 4.44, mse: 7.03, relerr: 4.44%, relerr10: 4.44%, r2: 0.5064
+epoch: 220, mae: 5.59, mse: 8.52, relerr: 5.56%, relerr10: 5.56%, r2: 0.4720
+epoch: 230, mae: 7.24, mse: 10.56, relerr: 7.21%, relerr10: 7.21%, r2: 0.4450
+epoch: 240, mae: 5.67, mse: 8.64, relerr: 5.64%, relerr10: 5.64%, r2: 0.4703
+epoch: 250, mae: 9.52, mse: 12.68, relerr: 9.44%, relerr10: 9.44%, r2: 0.4255
+epoch: 260, mae: 10.70, mse: 13.29, relerr: 10.61%, relerr10: 10.61%, r2: 0.4551
+epoch: 270, mae: 11.42, mse: 13.68, relerr: 11.31%, relerr10: 11.31%, r2: 0.4940
+epoch: 280, mae: 7.11, mse: 9.60, relerr: 7.06%, relerr10: 7.06%, r2: 0.5355
+epoch: 290, mae: 8.06, mse: 11.13, relerr: 7.99%, relerr10: 7.99%, r2: 0.4615
+epoch: 300, mae: 5.74, mse: 8.46, relerr: 5.68%, relerr10: 5.68%, r2: 0.5134
+epoch: 310, mae: 5.50, mse: 8.85, relerr: 5.49%, relerr10: 5.49%, r2: 0.4416
+epoch: 320, mae: 10.52, mse: 13.70, relerr: 10.42%, relerr10: 10.42%, r2: 0.4194
+epoch: 330, mae: 5.66, mse: 8.59, relerr: 5.60%, relerr10: 5.60%, r2: 0.4850
+epoch: 340, mae: 5.21, mse: 7.46, relerr: 5.18%, relerr10: 5.18%, r2: 0.5637
+epoch: 350, mae: 4.21, mse: 6.45, relerr: 4.18%, relerr10: 4.18%, r2: 0.5591
+epoch: 360, mae: 5.18, mse: 8.13, relerr: 5.18%, relerr10: 5.18%, r2: 0.4859
+epoch: 370, mae: 8.50, mse: 11.80, relerr: 8.42%, relerr10: 8.42%, r2: 0.4413
+epoch: 380, mae: 14.24, mse: 16.45, relerr: 14.08%, relerr10: 14.08%, r2: 0.4872
+epoch: 390, mae: 4.61, mse: 7.21, relerr: 4.61%, relerr10: 4.61%, r2: 0.5192
+epoch: 400, mae: 8.65, mse: 11.75, relerr: 8.57%, relerr10: 8.57%, r2: 0.4575
+epoch: 410, mae: 7.96, mse: 10.68, relerr: 7.89%, relerr10: 7.89%, r2: 0.5154
+epoch: 420, mae: 6.87, mse: 9.60, relerr: 6.82%, relerr10: 6.82%, r2: 0.5159
+epoch: 430, mae: 6.66, mse: 9.32, relerr: 6.60%, relerr10: 6.60%, r2: 0.5228
+epoch: 440, mae: 8.05, mse: 10.71, relerr: 7.97%, relerr10: 7.97%, r2: 0.5148
+epoch: 450, mae: 6.86, mse: 9.48, relerr: 6.81%, relerr10: 6.81%, r2: 0.5299
+epoch: 460, mae: 6.90, mse: 9.78, relerr: 6.86%, relerr10: 6.86%, r2: 0.4983
+epoch: 470, mae: 9.23, mse: 11.75, relerr: 9.14%, relerr10: 9.14%, r2: 0.5070
+epoch: 480, mae: 6.56, mse: 9.08, relerr: 6.52%, relerr10: 6.52%, r2: 0.5389
+epoch: 490, mae: 8.32, mse: 10.90, relerr: 8.25%, relerr10: 8.25%, r2: 0.5152
+epoch: 500, mae: 8.80, mse: 11.62, relerr: 8.71%, relerr10: 8.71%, r2: 0.4849
+best mae: 3.58, best mse: 4.78, best_relerr: 3.57, best_relerr10: 3.57, best_r2: 0.6767
+overall best mae: 3.58, overall best mse: 4.78, overall best_relerr: 3.57, overall best_relerr10: 3.57, overall best_r2: 0.6767
+epoch: 120, mae: 3.58, mse: 4.78, relerr: 3.57%, relerr10: 3.57%, r2: 0.6767
