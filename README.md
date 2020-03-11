@@ -16,6 +16,7 @@ Frontiers in Plant Science, 2020, in submission
 ## Highlights
 - **Highly Efficient:** TasselNetv2+ runs an order of magnitude faster than [TasselNetv2](https://link.springer.com/article/10.1186/s13007-019-0537-2) with around 30fps on image resolution of 1980×1080 on a single GTX 1070;
 - **Effective:** It retrains the same level of counting accuracy compared to its counterpart TasselNetv2;
+- **Easy to Use:** Pretrained plant counting models are included in this repository.
 
 
 ## Installation
