@@ -107,3 +107,6 @@ If you find this work or code useful for your research, please cite:
   publisher={Springer}
 }
 ```
+
+## Permission
+This code is only for non-commercial purposes. Please contact Hao Lu (poppinace@foxmail.com) if you are interested in commerial use.
