@@ -4,11 +4,11 @@
   <img src="plant_counting.png" width="825"/>
 </p>
 
-This repository includes the official implementation of TasselNetv2+ for plant counting, presented in our submission:
+This repository includes the official implementation of TasselNetv2+ for plant counting, presented in paper:
 
 **TasselNetv2+: A Fast Implementation for High-Throughput Plant Counting from High-Resolution RGB Imagery**
 
-Frontiers in Plant Science, 2020, in submission
+Frontiers in Plant Science, 2020
 
 [Hao Lu](https://sites.google.com/site/poppinace/) and Zhiguo Cao
 
@@ -96,6 +96,13 @@ To use this framework on your own dataset, you may need to:
 ## Citation
 If you find this work or code useful for your research, please cite:
 ```
+@article{lu2020tasselnetv2plus,
+  title={TasselNetV2+: A fast implementation for high-throughput plant counting from high-resolution RGB imagery},
+  author={Lu, Hao and Cao, Zhiguo},
+  journal={Frontiers in Plant Science},
+  year={2020}
+}
+
 @article{xiong2019tasselnetv2,
   title={TasselNetv2: in-field counting of wheat spikes with context-augmented local regression networks},
   author={Xiong, Haipeng and Cao, Zhiguo and Lu, Hao and Madec, Simon and Liu, Liang and Shen, Chunhua},
@@ -109,4 +116,4 @@ If you find this work or code useful for your research, please cite:
 ```
 
 ## Permission
-This code is only for non-commercial purposes. Please contact Hao Lu (poppinace@foxmail.com) if you are interested in commerial use.
+This code is only for non-commercial purposes. Please contact Hao Lu (hlu@hust.edu.cn) if you are interested in commerial use.
