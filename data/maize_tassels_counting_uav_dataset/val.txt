@@ -1,0 +1,106 @@
+/images/DJI_0862 (2).JPG	/labels/DJI_0862 (2).csv
+/images/DJI_0393 (2).JPG	/labels/DJI_0393 (2).csv
+/images/DJI_0397.JPG	/labels/DJI_0397.csv
+/images/DJI_0387.JPG	/labels/DJI_0387.csv
+/images/DJI_0212.JPG	/labels/DJI_0212.csv
+/images/DJI_0453 (2).JPG	/labels/DJI_0453 (2).csv
+/images/DJI_0097.JPG	/labels/DJI_0097.csv
+/images/DJI_0257.JPG	/labels/DJI_0257.csv
+/images/DJI_0138 (2).JPG	/labels/DJI_0138 (2).csv
+/images/DJI_0952 (2).JPG	/labels/DJI_0952 (2).csv
+/images/DJI_0662 (2).JPG	/labels/DJI_0662 (2).csv
+/images/DJI_0467.JPG	/labels/DJI_0467.csv
+/images/DJI_0701.JPG	/labels/DJI_0701.csv
+/images/DJI_0027.JPG	/labels/DJI_0027.csv
+/images/DJI_0317.JPG	/labels/DJI_0317.csv
+/images/DJI_0721.JPG	/labels/DJI_0721.csv
+/images/DJI_0787 (2).JPG	/labels/DJI_0787 (2).csv
+/images/DJI_0022.JPG	/labels/DJI_0022.csv
+/images/DJI_0807 (2).JPG	/labels/DJI_0807 (2).csv
+/images/DJI_0727 (2).JPG	/labels/DJI_0727 (2).csv
+/images/DJI_0407.JPG	/labels/DJI_0407.csv
+/images/DJI_0503 (2).JPG	/labels/DJI_0503 (2).csv
+/images/DJI_0043 (2).JPG	/labels/DJI_0043 (2).csv
+/images/DJI_0227.JPG	/labels/DJI_0227.csv
+/images/DJI_0956.JPG	/labels/DJI_0956.csv
+/images/DJI_0477.JPG	/labels/DJI_0477.csv
+/images/DJI_0856.JPG	/labels/DJI_0856.csv
+/images/DJI_0207.JPG	/labels/DJI_0207.csv
+/images/DJI_0053 (2).JPG	/labels/DJI_0053 (2).csv
+/images/DJI_0968.JPG	/labels/DJI_0968.csv
+/images/DJI_0262.JPG	/labels/DJI_0262.csv
+/images/DJI_0997 (2).JPG	/labels/DJI_0997 (2).csv
+/images/DJI_0162.JPG	/labels/DJI_0162.csv
+/images/DJI_0433 (2).JPG	/labels/DJI_0433 (2).csv
+/images/DJI_0936.JPG	/labels/DJI_0936.csv
+/images/DJI_0612.JPG	/labels/DJI_0612.csv
+/images/DJI_0552.JPG	/labels/DJI_0552.csv
+/images/DJI_0013 (2).JPG	/labels/DJI_0013 (2).csv
+/images/DJI_0841.JPG	/labels/DJI_0841.csv
+/images/DJI_0797 (2).JPG	/labels/DJI_0797 (2).csv
+/images/DJI_0373 (2).JPG	/labels/DJI_0373 (2).csv
+/images/DJI_0368 (2).JPG	/labels/DJI_0368 (2).csv
+/images/DJI_0152.JPG	/labels/DJI_0152.csv
+/images/DJI_0488 (2).JPG	/labels/DJI_0488 (2).csv
+/images/DJI_0767 (2).JPG	/labels/DJI_0767 (2).csv
+/images/DJI_0632.JPG	/labels/DJI_0632.csv
+/images/DJI_0822 (2).JPG	/labels/DJI_0822 (2).csv
+/images/DJI_0252.JPG	/labels/DJI_0252.csv
+/images/DJI_0208 (2).JPG	/labels/DJI_0208 (2).csv
+/images/DJI_0377.JPG	/labels/DJI_0377.csv
+/images/DJI_0892 (2).JPG	/labels/DJI_0892 (2).csv
+/images/DJI_0087.JPG	/labels/DJI_0087.csv
+/images/DJI_0871.JPG	/labels/DJI_0871.csv
+/images/DJI_0110 (2).JPG	/labels/DJI_0110 (2).csv
+/images/DJI_0766.JPG	/labels/DJI_0766.csv
+/images/DJI_0168 (2).JPG	/labels/DJI_0168 (2).csv
+/images/DJI_0088 (2).JPG	/labels/DJI_0088 (2).csv
+/images/DJI_0388 (2).JPG	/labels/DJI_0388 (2).csv
+/images/DJI_0292.JPG	/labels/DJI_0292.csv
+/images/DJI_0447.JPG	/labels/DJI_0447.csv
+/images/DJI_0183 (2).JPG	/labels/DJI_0183 (2).csv
+/images/DJI_0253 (2).JPG	/labels/DJI_0253 (2).csv
+/images/DJI_0218 (2).JPG	/labels/DJI_0218 (2).csv
+/images/DJI_0123 (2).JPG	/labels/DJI_0123 (2).csv
+/images/DJI_0423 (2).JPG	/labels/DJI_0423 (2).csv
+/images/DJI_0537.JPG	/labels/DJI_0537.csv
+/images/DJI_0487.JPG	/labels/DJI_0487.csv
+/images/DJI_0916.JPG	/labels/DJI_0916.csv
+/images/DJI_0969 (2).JPG	/labels/DJI_0969 (2).csv
+/images/DJI_0322.JPG	/labels/DJI_0322.csv
+/images/DJI_0203 (2).JPG	/labels/DJI_0203 (2).csv
+/images/DJI_0238 (2).JPG	/labels/DJI_0238 (2).csv
+/images/DJI_0637 (2).JPG	/labels/DJI_0637 (2).csv
+/images/DJI_0312.JPG	/labels/DJI_0312.csv
+/images/DJI_0448 (2).JPG	/labels/DJI_0448 (2).csv
+/images/DJI_0437.JPG	/labels/DJI_0437.csv
+/images/DJI_0971.JPG	/labels/DJI_0971.csv
+/images/DJI_0222.JPG	/labels/DJI_0222.csv
+/images/DJI_0277.JPG	/labels/DJI_0277.csv
+/images/DJI_0493 (2).JPG	/labels/DJI_0493 (2).csv
+/images/DJI_0163 (2).JPG	/labels/DJI_0163 (2).csv
+/images/DJI_0392.JPG	/labels/DJI_0392.csv
+/images/DJI_0282.JPG	/labels/DJI_0282.csv
+/images/DJI_0857 (2).JPG	/labels/DJI_0857 (2).csv
+/images/DJI_0508 (2).JPG	/labels/DJI_0508 (2).csv
+/images/DJI_0641.JPG	/labels/DJI_0641.csv
+/images/DJI_0428 (2).JPG	/labels/DJI_0428 (2).csv
+/images/DJI_0762 (2).JPG	/labels/DJI_0762 (2).csv
+/images/DJI_0646.JPG	/labels/DJI_0646.csv
+/images/DJI_0497.JPG	/labels/DJI_0497.csv
+/images/DJI_0926.JPG	/labels/DJI_0926.csv
+/images/DJI_0917 (2).JPG	/labels/DJI_0917 (2).csv
+/images/DJI_0498 (2).JPG	/labels/DJI_0498 (2).csv
+/images/DJI_0977 (2).JPG	/labels/DJI_0977 (2).csv
+/images/DJI_0842 (2).JPG	/labels/DJI_0842 (2).csv
+/images/DJI_0142.JPG	/labels/DJI_0142.csv
+/images/DJI_0912 (2).JPG	/labels/DJI_0912 (2).csv
+/images/DJI_0702 (2).JPG	/labels/DJI_0702 (2).csv
+/images/DJI_0283 (2).JPG	/labels/DJI_0283 (2).csv
+/images/DJI_0667 (2).JPG	/labels/DJI_0667 (2).csv
+/images/DJI_0716.JPG	/labels/DJI_0716.csv
+/images/DJI_0353 (2).JPG	/labels/DJI_0353 (2).csv
+/images/DJI_0696.JPG	/labels/DJI_0696.csv
+/images/DJI_0712 (2).JPG	/labels/DJI_0712 (2).csv
+/images/DJI_0877 (2).JPG	/labels/DJI_0877 (2).csv
+/images/DJI_0243 (2).JPG	/labels/DJI_0243 (2).csv
