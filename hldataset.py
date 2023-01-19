@@ -6,7 +6,7 @@ import os
 import json
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-import pandas as pd 
+import pandas as pd
 import random
 import numpy as np
 from PIL import Image
@@ -111,20 +111,20 @@ class ZeroPadding(object):
         self.psize = psize
 
     def __call__(self, sample):
-        psize =  self.psize
+        psize = self.psize
 
         image, target, gtcount = sample['image'], sample['target'], sample['gtcount']
-        h,w = image.size()[-2:]
-        ph,pw = (psize-h%psize),(psize-w%psize)
+        h, w = image.size()[-2:]
+        ph, pw = (psize-h % psize), (psize-w % psize)
         # print(ph,pw)
 
         (pl, pr) = (pw//2, pw-pw//2) if pw != psize else (0, 0)
         (pt, pb) = (ph//2, ph-ph//2) if ph != psize else (0, 0)
-        if (ph!=psize) or (pw!=psize):
+        if (ph != psize) or (pw != psize):
             tmp_pad = [pl, pr, pt, pb]
             # print(tmp_pad)
-            image = F.pad(image,tmp_pad)
-            target = F.pad(target,tmp_pad)
+            image = F.pad(image, tmp_pad)
+            target = F.pad(target, tmp_pad)
 
         return {'image': image, 'target': target, 'gtcount': gtcount}
 
@@ -150,24 +150,26 @@ class ToTensor(object):
 class MaizeTasselDataset(Dataset):
     def __init__(self, data_dir, data_list, ratio, train=True, transform=None):
         self.data_dir = data_dir
-        self.data_list = [name.split('\t') for name in open(data_list).read().splitlines()]
+        self.data_list = [name.split('\t')
+                          for name in open(data_list).read().splitlines()]
         self.ratio = ratio
         self.train = train
         self.transform = transform
         self.image_list = []
-        
+
         # store images and generate ground truths
         self.images = {}
         self.targets = {}
         self.gtcounts = {}
         self.dotimages = {}
 
-    def bbs2points(self, bbs):    
+    def bbs2points(self, bbs):
         points = []
         for bb in bbs:
             x1, y1, w, h = [float(b) for b in bb]
             x2, y2 = x1+w-1, y1+h-1
-            x, y = np.round((x1+x2)/2).astype(np.int32), np.round((y1+y2)/2).astype(np.int32)
+            x, y = np.round(
+                (x1+x2)/2).astype(np.int32), np.round((y1+y2)/2).astype(np.int32)
             points.append([x, y])
         return points
 
@@ -183,7 +185,7 @@ class MaizeTasselDataset(Dataset):
             h, w = image.shape[:2]
             nh = int(np.ceil(h * self.ratio))
             nw = int(np.ceil(w * self.ratio))
-            image = cv2.resize(image, (nw, nh), interpolation = cv2.INTER_CUBIC)
+            image = cv2.resize(image, (nw, nh), interpolation=cv2.INTER_CUBIC)
             target = np.zeros((nh, nw), dtype=np.float32)
             dotimage = image.copy()
             if annotation['annotation'][0][0][1] is not None:
@@ -191,9 +193,11 @@ class MaizeTasselDataset(Dataset):
                 gtcount = bbs.shape[0]
                 pts = self.bbs2points(bbs)
                 for pt in pts:
-                    pt[0], pt[1] = int(pt[0] * self.ratio), int(pt[1] * self.ratio)
+                    pt[0], pt[1] = int(
+                        pt[0] * self.ratio), int(pt[1] * self.ratio)
                     target[pt[1], pt[0]] = 1
-                    cv2.circle(dotimage, (pt[0], pt[1]), int(24 * self.ratio) , (255, 0, 0), -1)
+                    cv2.circle(dotimage, (pt[0], pt[1]), int(
+                        24 * self.ratio), (255, 0, 0), -1)
             else:
                 gtcount = 0
             target = gaussian_filter(target, 80 * self.ratio)
@@ -202,15 +206,14 @@ class MaizeTasselDataset(Dataset):
             # plt.show()
             # print(target.sum())
 
-            self.images.update({file_name[0]:image})
-            self.targets.update({file_name[0]:target})
-            self.gtcounts.update({file_name[0]:gtcount})
-            self.dotimages.update({file_name[0]:dotimage})
+            self.images.update({file_name[0]: image})
+            self.targets.update({file_name[0]: target})
+            self.gtcounts.update({file_name[0]: gtcount})
+            self.dotimages.update({file_name[0]: dotimage})
 
-        
         sample = {
-            'image': self.images[file_name[0]], 
-            'target': self.targets[file_name[0]], 
+            'image': self.images[file_name[0]],
+            'target': self.targets[file_name[0]],
             'gtcount': self.gtcounts[file_name[0]]
         }
 
@@ -223,12 +226,13 @@ class MaizeTasselDataset(Dataset):
 class WhearEarDataset(Dataset):
     def __init__(self, data_dir, data_list, ratio, train=True, transform=None):
         self.data_dir = data_dir
-        self.data_list = [name.split('\t') for name in open(data_list).read().splitlines()]
+        self.data_list = [name.split('\t')
+                          for name in open(data_list).read().splitlines()]
         self.ratio = ratio
         self.train = train
         self.transform = transform
         self.image_list = []
-        
+
         # store images and generate ground truths
         self.images = {}
         self.targets = {}
@@ -247,11 +251,12 @@ class WhearEarDataset(Dataset):
             bbs.append([xmin, ymin, xmax, ymax])
         return bbs
 
-    def bbs2points(self, bbs):    
+    def bbs2points(self, bbs):
         points = []
         for bb in bbs:
             x1, y1, x2, y2 = [float(b) for b in bb]
-            x, y = np.round((x1+x2)/2).astype(np.int32), np.round((y1+y2)/2).astype(np.int32)
+            x, y = np.round(
+                (x1+x2)/2).astype(np.int32), np.round((y1+y2)/2).astype(np.int32)
             points.append([x, y])
         return points
 
@@ -267,14 +272,15 @@ class WhearEarDataset(Dataset):
             h, w = image.shape[:2]
             nh = int(np.ceil(h * self.ratio))
             nw = int(np.ceil(w * self.ratio))
-            image = cv2.resize(image, (nw, nh), interpolation = cv2.INTER_CUBIC)
+            image = cv2.resize(image, (nw, nh), interpolation=cv2.INTER_CUBIC)
             target = np.zeros((nh, nw), dtype=np.float32)
             dotimage = image.copy()
             if bbs is not None:
                 gtcount = len(bbs)
                 pts = self.bbs2points(bbs)
                 for pt in pts:
-                    pt[0], pt[1] = int(pt[0] * self.ratio), int(pt[1] * self.ratio)
+                    pt[0], pt[1] = int(
+                        pt[0] * self.ratio), int(pt[1] * self.ratio)
                     target[pt[1], pt[0]] = 1
                     cv2.circle(dotimage, (pt[0], pt[1]), 6, (255, 0, 0), -1)
             else:
@@ -292,15 +298,14 @@ class WhearEarDataset(Dataset):
             # plt.imshow(dotimage.astype(np.uint8))
             # plt.show()
 
-            self.images.update({file_name[0]:image})
-            self.targets.update({file_name[0]:target})
-            self.gtcounts.update({file_name[0]:gtcount})
-            self.dotimages.update({file_name[0]:dotimage})
+            self.images.update({file_name[0]: image})
+            self.targets.update({file_name[0]: target})
+            self.gtcounts.update({file_name[0]: gtcount})
+            self.dotimages.update({file_name[0]: dotimage})
 
-        
         sample = {
-            'image': self.images[file_name[0]], 
-            'target': self.targets[file_name[0]], 
+            'image': self.images[file_name[0]],
+            'target': self.targets[file_name[0]],
             'gtcount': self.gtcounts[file_name[0]]
         }
 
@@ -313,12 +318,13 @@ class WhearEarDataset(Dataset):
 class SorghumHeadDataset(Dataset):
     def __init__(self, data_dir, data_list, ratio, train=True, transform=None):
         self.data_dir = data_dir
-        self.data_list = [name.split('\t') for name in open(data_list).read().splitlines()]
+        self.data_list = [name.split('\t')
+                          for name in open(data_list).read().splitlines()]
         self.ratio = ratio
         self.train = train
         self.transform = transform
         self.image_list = []
-        
+
         # store images and generate ground truths
         self.images = {}
         self.targets = {}
@@ -341,7 +347,7 @@ class SorghumHeadDataset(Dataset):
             h, w = image.shape[:2]
             nh = int(np.ceil(h * self.ratio))
             nw = int(np.ceil(w * self.ratio))
-            image = cv2.resize(image, (nw, nh), interpolation = cv2.INTER_CUBIC)
+            image = cv2.resize(image, (nw, nh), interpolation=cv2.INTER_CUBIC)
             target = np.zeros((nh, nw), dtype=np.float32)
             dotimage = image.copy()
             if annotations is not None:
@@ -366,15 +372,14 @@ class SorghumHeadDataset(Dataset):
             # plt.imshow(dotimage.astype(np.uint8))
             # plt.show()
 
-            self.images.update({file_name[0]:image})
-            self.targets.update({file_name[0]:target})
-            self.gtcounts.update({file_name[0]:gtcount})
-            self.dotimages.update({file_name[0]:dotimage})
+            self.images.update({file_name[0]: image})
+            self.targets.update({file_name[0]: target})
+            self.gtcounts.update({file_name[0]: gtcount})
+            self.dotimages.update({file_name[0]: dotimage})
 
-        
         sample = {
-            'image': self.images[file_name[0]], 
-            'target': self.targets[file_name[0]], 
+            'image': self.images[file_name[0]],
+            'target': self.targets[file_name[0]],
             'gtcount': self.gtcounts[file_name[0]]
         }
 
@@ -384,13 +389,106 @@ class SorghumHeadDataset(Dataset):
         return sample
 
 
-if __name__=='__main__':
+class NewMaizeDataset(Dataset):
+    def __init__(self, data_dir, data_list, ratio, train=True, transform=None):
+        self.data_dir = data_dir
+        self.data_list = [name.split('\t')
+                          for name in open(data_list).read().splitlines()]
+        self.ratio = ratio
+        self.train = train
+        self.transform = transform
+        self.image_list = []
+
+        # store images and generate ground truths
+        self.images = {}
+        self.targets = {}
+        self.gtcounts = {}
+        self.dotimages = {}
+
+    def parsecsv(self, csv):
+
+        points = []
+
+        label = pd.read_csv(csv)
+
+        label = label["region_shape_attributes"].values.tolist()
+
+        for i in label:
+            j = json.loads(i)
+
+            if (not "cx" in j or not "cy" in j):
+                continue
+
+            points.append([j['cx'], j['cy']])
+
+        return points
+
+    def __len__(self):
+        return len(self.data_list)
+
+    def __getitem__(self, idx):
+        file_name = self.data_list[idx]
+        self.image_list.append(file_name[0])
+        if file_name[0] not in self.images:
+            image = read_image(self.data_dir+file_name[0])
+
+            #bbs = self.parsexml(self.data_dir+file_name[1])
+
+            h, w = image.shape[:2]
+            nh = int(np.ceil(h * self.ratio))
+            nw = int(np.ceil(w * self.ratio))
+            image = cv2.resize(image, (nw, nh), interpolation=cv2.INTER_CUBIC)
+            target = np.zeros((nh, nw), dtype=np.float32)
+            dotimage = image.copy()
+            if True:  # bbs is not None
+                # self.bbs2points(bbs)
+                pts = self.parsecsv(self.data_dir+file_name[1])
+                gtcount = len(pts)  # len(bbs)
+
+                for pt in pts:
+                    pt[0], pt[1] = int(
+                        pt[0] * self.ratio), int(pt[1] * self.ratio)
+                    target[pt[1], pt[0]] = 1
+                    cv2.circle(dotimage, (pt[0], pt[1]), 6, (255, 0, 0), -1)
+            else:
+                gtcount = 0
+            target = gaussian_filter(target, 40 * self.ratio)
+
+            # cmap = plt.cm.get_cmap('jet')
+            # target_show = target / (target.max() + 1e-12)
+            # target_show = cmap(target_show) * 255.
+            # target_show = 0.5 * image + 0.5 * target_show[:, :, 0:3]
+            # plt.imshow(target_show.astype(np.uint8))
+            # plt.show()
+            # print(target.sum())
+
+            # plt.imshow(dotimage.astype(np.uint8))
+            # plt.show()
+
+            self.images.update({file_name[0]: image})
+            self.targets.update({file_name[0]: target})
+            self.gtcounts.update({file_name[0]: gtcount})
+            self.dotimages.update({file_name[0]: dotimage})
+
+        sample = {
+            'image': self.images[file_name[0]],
+            'target': self.targets[file_name[0]],
+            'gtcount': self.gtcounts[file_name[0]]
+        }
+
+        if self.transform:
+            sample = self.transform(sample)
+
+        return sample
+
+
+if __name__ == '__main__':
 
     dataset = WhearEarDataset(
-        data_dir='./data/wheat_ears_counting_dataset', 
+        data_dir='./data/wheat_ears_counting_dataset',
         data_list='./data/wheat_ears_counting_dataset/train.txt',
-        ratio=0.167, 
-        train=True, 
+        ratio=0.167,
+        train=True,
         transform=transforms.Compose([
             ToTensor()]
         )
@@ -402,7 +500,7 @@ if __name__=='__main__':
         shuffle=False,
         num_workers=0
     )
-    
+
     print(len(dataloader))
     mean = 0.
     std = 0.
@@ -413,7 +511,7 @@ if __name__=='__main__':
         mean += images.mean(2).sum(0)
         std += images.std(2).sum(0)
         print(images.size())
-        print(i) 
+        print(i)
     mean /= len(dataloader)
     std /= len(dataloader)
     print(mean/255.)
