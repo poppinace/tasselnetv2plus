@@ -2,7 +2,7 @@ torch
 torchvision
 opencv-python
 numpy
-PIL
+pillow
 matplotlib
 scipy
 skimage
