@@ -423,54 +423,6 @@ class NewMaizeDataset(Dataset):
 
         return points
 
-        '''
-        # LOADCSV
-
-        # Loads Label
-        label = pd.read_csv('maize_tassels_counting_uav_dataset' + row[1])
-
-        # Extracts json string of coordinates
-        label = label["region_shape_attributes"].values.tolist()
-
-        # Makes groundtruth grid
-        gt_grid = np.zeros((456 + 1, 684 + 1))
-
-        # Loads coordinates into groundtruth grid
-        for i in label:
-            j = json.loads(i)
-
-            if (not "cx" in j or not "cy" in j):
-                continue
-
-            gt_grid[j['cx'] // 12][j['cy'] // 12] += 1
-
-        labels_arr.append(gt_grid)
-        
-        
-        # PARSEXML
-
-        tree = ET.parse(xml)
-        root = tree.getroot()
-        bbs = []
-        for bb in root.iter('bndbox'):
-            xmin = int(bb.find('xmin').text)
-            ymin = int(bb.find('ymin').text)
-            xmax = int(bb.find('xmax').text)
-            ymax = int(bb.find('ymax').text)
-            bbs.append([xmin, ymin, xmax, ymax])
-        return bbs
-        '''
-
-    '''def bbs2points(self, bbs):
-        points = []
-        for bb in bbs:
-            x1, y1, x2, y2 = [float(b) for b in bb]
-            x, y = np.round(
-                (x1+x2)/2).astype(np.int32), np.round((y1+y2)/2).astype(np.int32)
-            points.append([x, y])
-        return points
-    '''
-
     def __len__(self):
         return len(self.data_list)
 
@@ -492,7 +444,6 @@ class NewMaizeDataset(Dataset):
                 # self.bbs2points(bbs)
                 pts = self.parsecsv(self.data_dir+file_name[1])
                 gtcount = len(pts)  # len(bbs)
-
 
                 for pt in pts:
                     pt[0], pt[1] = int(
